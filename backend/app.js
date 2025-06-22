@@ -4,13 +4,14 @@ import fs from "fs";
 import uploadRoute from "./routes/uploadRoute.js";
 import cors from "cors";
 
+const app = express();
+
 app.use(
   cors({
     origin: "https://linker-sage.vercel.app",
   })
 );
 
-const app = express();
 app.use(express.json());
 
 if (!fs.existsSync("uploads")) {
