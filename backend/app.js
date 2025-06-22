@@ -2,6 +2,13 @@ import express from "express";
 import "dotenv/config";
 import fs from "fs";
 import uploadRoute from "./routes/uploadRoute.js";
+import cors from "cors";
+
+app.use(
+  cors({
+    origin: "https://linker-sage.vercel.app",
+  })
+);
 
 const app = express();
 app.use(express.json());
