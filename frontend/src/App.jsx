@@ -23,7 +23,7 @@ function App() {
 
     try {
       const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/users`,
+        `${import.meta.env.VITE_API_URL}/api/upload`,
         formData,
         {
           headers: {
