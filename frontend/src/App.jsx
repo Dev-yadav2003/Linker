@@ -22,11 +22,15 @@ function App() {
     formData.append("file", file);
 
     try {
-      const res = await axios.post("/api/upload", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/users`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
 
       setImageUrl(res.data.url);
     } catch (error) {
